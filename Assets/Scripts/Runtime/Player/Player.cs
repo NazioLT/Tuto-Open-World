@@ -9,5 +9,6 @@ public class Player : MonoBehaviour
     {
         _inputs.OnMovePerformed.AddListener(_motor.MovePerformed);
         _inputs.OnJumpPerformed.AddListener(_motor.JumpPerformed);
+        _inputs.OnLookPerformed.AddListener(_motor.LookPerformed);
     }
 }
