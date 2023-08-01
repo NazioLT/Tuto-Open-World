@@ -26,6 +26,7 @@ public class AIBehaviour : MonoBehaviour
     private void UpdateAttack()
     {
         print("Attacking");
+        _agent.isStopped = true;
     }
 
     private void UpdateHunt()
