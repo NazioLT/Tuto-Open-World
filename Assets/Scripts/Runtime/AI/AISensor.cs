@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class AISensor : MonoBehaviour
 {
-    [SerializeField] private float _visionRange = 5f;
-    [SerializeField] private float _attackRange = 2f;
+    [SerializeField] private RangeAngleDetection _visionDetection = new RangeAngleDetection(5f, 180f);
+    [SerializeField] private  RangeAngleDetection _attackDetection = new RangeAngleDetection(2f, 90f);
     [SerializeField] private Transform _player;
 
     private bool _canSeePlayer = false;
@@ -15,10 +15,7 @@ public class AISensor : MonoBehaviour
 
     private void Update()
     {
-        Vector3 playerDelta = _player.position - transform.position;
-        float distanceToPlayer = playerDelta.magnitude;
-
-        _canSeePlayer = distanceToPlayer < _visionRange;
-        _canAttackPlayer = distanceToPlayer < _attackRange;
+        _canSeePlayer = _visionDetection.IsAngleRangeDetected(transform.position, _player.position, transform.forward);
+        _canAttackPlayer = _attackDetection.IsAngleRangeDetected(transform.position, _player.position, transform.forward);
     }
 }

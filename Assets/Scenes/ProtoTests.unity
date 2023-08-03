@@ -318,7 +318,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &103395397
 MonoBehaviour:
@@ -332,7 +332,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13febec07f5ef1f4696be546e59da0e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _visionRange: 5
+  _visionDetection:
+    _range: 5
+    _angle: 180
   _attackRange: 2
   _player: {fileID: 1739887992}
 --- !u!195 &103395398

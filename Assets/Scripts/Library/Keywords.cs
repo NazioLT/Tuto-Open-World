@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public static class Keywords
 {
     public const string JUMP_KEY = "Jump";
